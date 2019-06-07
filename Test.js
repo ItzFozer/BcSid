@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "$"
-var adminprefix = '$'
+var prefix = "-"
+var adminprefix = '-'
 
 
 //bc
 
 client.on("message", message => {
-    if (message.content.startsWith("1bc")) {
+    if (message.content.startsWith("-1bc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -19,19 +19,6 @@ client.on("message", message => {
   };
   });
 
-
-client.on("message", message => {
-    if (message.content.startsWith("2bc")) {
-                 if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-  let args = message.content.split(" ").slice(1);
-  var argresult = args.join(' ');
-  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
-  m.send(`${argresult}\n ${m}`);
-  })
-  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  **__المستلمين__** `);
-  message.delete();
-  };
-  });
 
 //bc online
 
@@ -40,7 +27,7 @@ client.on("message", message => {
 
   client.on("message", message => {
   
-              if (message.content.startsWith(prefix + "3bc")) {
+              if (message.content.startsWith(prefix + "-2bc")) {
                            if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
@@ -69,7 +56,7 @@ client.on('ready',  () => {
   client.on('message', message => {
     if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('3bc')){
+if (message.content.startsWith('-3bc')){
 if(!message.author.id === '476185102922285066') return;
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
@@ -77,7 +64,6 @@ m.sendMessage(args)
 })
 }
 });
-
 
   client.on('message', msg => {
     if(msg.content === '-help')
@@ -92,11 +78,11 @@ m.sendMessage(args)
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
 
-       $1bc | لأرسال برود كاست للكل
+       -1bc | لأرسال برود كاست للكل
 
-       $2bc  |  لأرسال برود كاست للأونلاين
+       -2bc  |  لأرسال برود كاست للأونلاين
 
-       $3bc | برودكاست عادي
+       -3bc | برودكاست عادي
 
        ** `)
    message.author.sendEmbed(embed)
