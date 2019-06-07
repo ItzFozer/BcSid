@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '-';
+var prefix = "$"
+var adminprefix = '$'
+
 
 //bc
 
@@ -19,7 +21,7 @@ client.on("message", message => {
 
 
 client.on("message", message => {
-    if (message.content.startsWith("-1bc")) {
+    if (message.content.startsWith("2bc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -38,7 +40,7 @@ client.on("message", message => {
 
   client.on("message", message => {
   
-              if (message.content.startsWith(prefix + "2bc")) {
+              if (message.content.startsWith(prefix + "3bc")) {
                            if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
@@ -90,11 +92,11 @@ m.sendMessage(args)
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
 
-       -1bc | لأرسال برود كاست للكل
+       $1bc | لأرسال برود كاست للكل
 
-       -2bc  |  لأرسال برود كاست للأونلاين
+       $2bc  |  لأرسال برود كاست للأونلاين
 
-       -3bc | برودكاست عادي
+       $3bc | برودكاست عادي
 
        ** `)
    message.author.sendEmbed(embed)
