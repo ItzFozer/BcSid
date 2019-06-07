@@ -1,13 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "-"
-var adminprefix = '-'
-
+const prefix = '+';
 
 //bc
 
 client.on("message", message => {
-    if (message.content.startsWith("-1bc")) {
+    if (message.content.startsWith("1bc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -27,7 +25,7 @@ client.on("message", message => {
 
   client.on("message", message => {
   
-              if (message.content.startsWith(prefix + "-2bc")) {
+              if (message.content.startsWith(prefix + "2bc")) {
                            if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
@@ -56,7 +54,7 @@ client.on('ready',  () => {
   client.on('message', message => {
     if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('-3bc')){
+if (message.content.startsWith('3bc')){
 if(!message.author.id === '476185102922285066') return;
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
